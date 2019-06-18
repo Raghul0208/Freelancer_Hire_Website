@@ -1,0 +1,15 @@
+create table user_details(firstname varchar2(10),lastname varchar2(10),contactnumber varchar2(10),email varchar2(30),password varchar2(10) not null,skillset1 varchar2(10) not null,skillset2 varchar2(10),skillset3 varchar2(10),skillset4 varchar2(10),skillset5 varchar2(10),skillset6 varchar2(10),skillset7 varchar2(10),skillset8 varchar2(10),skillset9 varchar2(10),skillset10 varchar2(10),userid number(5) not null,primary key(userid));
+
+
+create table admin_details(firstname varchar2(10) not null,lastname varchar2(10) not null,contactnumber varchar2(10) not null,email varchar2(30) not null,password varchar2(10) not null,adminid number(5) not null,primary key(adminid));
+
+
+create table project_details(projecttitle varchar2(50),projectduration varchar2(3),skillset1 varchar2(10),skillset2 varchar2(10),skillset3 varchar2(10),skillset4 varchar2(10),skillset5 varchar2(10),skillset6 varchar2(10),skillset7 varchar2(10),skillset8 varchar2(10),skillset9 varchar2(10),skillset10 varchar2(10),remarks varchar2(200),projectid number(5),adminid number(5),primary key(projectid),foreign key(adminid) references admin_details(adminid));
+
+
+
+
+create table skill_details1(emailid varchar2(40),skill_Name varchar2(20),projectid number(5),skillid number(5),primary key(skillid),foreign key(projectid) references project_details(projectid));
+
+
+create table Proposed_project1(emailid varchar2(40),skill_Name varchar2(20),projectid varchar2(5),status varchar2(40));
